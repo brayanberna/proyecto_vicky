@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="col pb-5">
+    <h2>Registro de atención</h2>
+    <form action="" method="post" class="row pt-2 g-4">
+      {% csrf_token %}
+      <div class="col-4">
+        {{ form.localidad.label_tag }}
+        {{ form.localidad }}
+      </div>
+      <div class="col-4">
+        {{ form.nombre.label_tag }}
+        {{ form.nombre}}
+      </div>
+      <div class="col-4">
+        {{ form.rut.label_tag }}
+        {{ form.rut}}
+      </div>
+      <div class="col-4">
+        {{ form.tipo_atencion.label_tag }}
+        {{ form.tipo_atencion }}
+      </div>
+      <div class="col-2">
+        {{ form.nacionalidad.label_tag }}
+        {{ form.nacionalidad}}
+      </div>
+      <div class="col-3">
+        {{ form.etnia.label_tag }}
+        {{ form.etnia}}
+      </div>
+      <div class="col-3">
+        {{ form.sexo.label_tag }}
+        {{ form.sexo}}
+      </div>
+      <div class="col-2">
+        {{ form.rango_etario.label_tag }}
+        {{ form.rango_etario}}
+      </div>
+      <div class="col-3">
+        {{ form.edad.label_tag }}
+        {{ form.edad}}
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary"> Registrar <span class="fas fa-file-excel"></span></button>
+      </div>
+    </form>
+    <script src="formatoRUT.js"></script>
+  </div>
+{% endblock %}

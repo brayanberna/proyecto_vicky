@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h2 class="pb-3">Registro de atención</h2>
+<form action="" method="post" enctype="multipart/form-data" class="row pt-2 g-4">
+  {% csrf_token %}
+  <div class="col-6">
+    <label for="inputGroupFile02" class="form-label">Excel con datos:</label>
+    <div class="form-file">
+      <input type="file" class="form-file-input" id="inputGroupFile02" name="excel1"/>
+      <label class="form-file-label" for="customFile">
+        <span class="form-file-text">Seleccionar Archivo...</span>
+        <span class="form-file-button">Elegir</span>
+      </label>
+    </div>
+  </div>
+  <div class="col-6">
+    <label for="inputGroupFile02" class="form-label">Excel con resultados:</label>
+    <div class="form-file">
+      <input type="file" class="form-file-input" id="customFile" name="excel2" required>
+      <label class="form-file-label" for="customFile">
+        <span class="form-file-text">Seleccionar Archivo...</span>
+        <span class="form-file-button">Elegir</span>
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">CARGAR RESULTADOS <i class="fas fa-download"></i></button>
+  </div>
+</form>
+<script>
+  document.querySelectorAll('.form-file-input')
+      .forEach(_ => addEventListener('change', e => e.target.parentElement.querySelector('.form-file-text').innerText = e.target.files[0].name));
+</script>
+{% endblock %}

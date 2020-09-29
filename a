@@ -1,0 +1,53 @@
+[33mcommit c19cbfe6fe8a080dd02509b9ecb5063f4948a519[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Brayan <brayan.057@live.cl>
+Date:   Tue Sep 29 17:39:06 2020 -0300
+
+    cambiando locale 4
+
+[33mcommit 3757872546274aa8dff6982c358d02438f381ffc[m
+Author: Brayan <brayan.057@live.cl>
+Date:   Tue Sep 29 17:32:59 2020 -0300
+
+    arreglango fecha local 4
+
+[33mcommit bfd2fdafacd1a91c933ff2c32aeba7d12b6cf82f[m
+Author: Brayan <brayan.057@live.cl>
+Date:   Tue Sep 29 17:26:19 2020 -0300
+
+    arreglango fecha local 4
+
+[33mcommit 209b4fe50c4cddce020d5926e80ef68ab703eaae[m
+Author: Brayan <brayan.057@live.cl>
+Date:   Tue Sep 29 17:21:56 2020 -0300
+
+    cambiando locale 3
+
+[33mcommit 3fc74f4e46adbd618bbeab0382b8394811b42ece[m
+Author: Brayan <brayan.057@live.cl>
+Date:   Tue Sep 29 17:05:37 2020 -0300
+
+    cambiando locale 2
+
+[33mcommit f31bbeae760c063655a089af7428ad4f71b8add4[m
+Author: Brayan <brayan.057@live.cl>
+Date:   Tue Sep 29 17:00:45 2020 -0300
+
+    arreglango fecha local
+
+[33mcommit 01ba79197cf704384d520cda9642c8ee7f472222[m[33m ([m[1;31mheroku/master[m[33m)[m
+Author: Brayan <brayan.057@live.cl>
+Date:   Tue Sep 29 13:21:29 2020 -0300
+
+    cambiando configuraciones para heroku
+
+[33mcommit 3beb4733ab12f5ebaf604b33748d977fb3cf9694[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Brayan <brayan.057@live.cl>
+Date:   Mon Sep 28 21:04:34 2020 -0300
+
+    probando comandos 2
+
+[33mcommit 2c78df80cd46f81552f9461b143e1bb96f402bae[m
+Author: Brayan <brayan.057@live.cl>
+Date:   Mon Sep 28 20:04:30 2020 -0300
+
+    inicio deploy de proyecto vicky a heroku

@@ -99,7 +99,8 @@ def index(request):
         wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
         return redirect('index')
 
-    except FileNotFoundError:
+    #except FileNotFoundError:
+    except:
       wb = Workbook() # Crea un archivo necesario para trabajar.
       ws = wb.active # Crea libro de trabajo con una hoja de trabajo.
 

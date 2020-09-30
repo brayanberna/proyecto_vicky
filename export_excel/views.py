@@ -103,7 +103,8 @@ def index(request):
     #except FileNotFoundError as e:
     #except:
     #except Exception as e:
-    finally:
+    #finally:
+    else:
       wb = Workbook() # Crea un archivo necesario para trabajar.
       ws = wb.active # Crea libro de trabajo con una hoja de trabajo.
 

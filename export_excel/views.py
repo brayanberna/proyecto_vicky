@@ -100,7 +100,7 @@ def index(request):
         wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
         return redirect('index')
 
-    except FileNotFoundError:
+    except ZeroDivisionError:
     #except FileNotFoundError as e:
     #except:
     #except Exception as e:

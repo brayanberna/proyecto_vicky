@@ -128,7 +128,6 @@ def index(request):
         for cell in rows:
           cell.alignment = Alignment(horizontal="center")
 
-      ws.column_dimensions['J'].width = auto_size
       #Filtro
       ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
       wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')

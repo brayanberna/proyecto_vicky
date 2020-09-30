@@ -39,6 +39,7 @@ def index(request):
     edad = form.cleaned_data.get('edad')
 
     try:
+      a = 2/0
       workbook_name = 'C:/Users/56975/Documents/proyecto_vicky.xlsx'
       wb = load_workbook(workbook_name)
       ws = wb.active
@@ -99,12 +100,12 @@ def index(request):
         wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
         return redirect('index')
 
-    #except FileNotFoundError:
+    except FileNotFoundError:
     #except FileNotFoundError as e:
     #except:
     #except Exception as e:
     #finally:
-    else:
+    #else:
       wb = Workbook() # Crea un archivo necesario para trabajar.
       ws = wb.active # Crea libro de trabajo con una hoja de trabajo.
 

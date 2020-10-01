@@ -37,10 +37,11 @@ def index(request):
     sexo = form.cleaned_data.get('sexo')
     rango_etario = form.cleaned_data.get('rango_etario')
     edad = form.cleaned_data.get('edad')
+    #guargar_excel = request.FILES['guardar_excel']
+    #print("HOLAAAAAAAAAAAAAA::", guargar_excel)
 
     try:
-      a = 2/0
-      workbook_name = 'C:/Users/56975/Documents/proyecto_vicky.xlsx'
+      workbook_name = 'proyecto_vicky.xlsx'
       wb = load_workbook(workbook_name)
       ws = wb.active
       print()
@@ -100,8 +101,9 @@ def index(request):
         wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
         return redirect('index')
 
-    except ZeroDivisionError:
+    except FileNotFoundError:
     #except FileNotFoundError as e:
+    #except ZeroDivisionError:
     #except:
     #except Exception as e:
     #finally:
@@ -136,7 +138,8 @@ def index(request):
 
       #Filtro
       ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
-      wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
+      wb.save('proyecto_vicky.xlsx')
+      #wb.save('proyecto_vicky.xlsx')
       return redirect('index')
   return render(request, "index.html", {'form': form})
 

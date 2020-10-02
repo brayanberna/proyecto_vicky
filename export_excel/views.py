@@ -138,7 +138,7 @@ def index(request):
 
       #Filtro
       ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
-      wb.save('/export_excel/static/files/proyecto_vicky.xlsx')
+      wb.save('export_excel/static/files/proyecto_vicky.xlsx')
       #wb.save('static/files/proyecto_vicky.xlsx')
 
       #wb.save('proyecto_vicky.xlsx')

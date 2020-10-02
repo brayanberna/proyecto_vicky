@@ -41,7 +41,7 @@ def index(request):
     #print("HOLAAAAAAAAAAAAAA::", guargar_excel)
 
     try:
-      workbook_name = 'proyecto_vicky.xlsx'
+      workbook_name = 'export_excel/static/files/proyecto_vicky.xlsx'
       wb = load_workbook(workbook_name)
       ws = wb.active
       print()
@@ -67,7 +67,7 @@ def index(request):
         max_column=ws.max_column
 
         ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
-        wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
+        wb.save('export_excel/static/files/proyecto_vicky.xlsx')
         return redirect('index')
         
       else:
@@ -98,16 +98,10 @@ def index(request):
             cell.alignment = Alignment(horizontal="center")
             
         ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
-        wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
+        wb.save('export_excel/static/files/proyecto_vicky.xlsx')
         return redirect('index')
 
     except FileNotFoundError:
-    #except FileNotFoundError as e:
-    #except ZeroDivisionError:
-    #except:
-    #except Exception as e:
-    #finally:
-    #else:
       wb = Workbook() # Crea un archivo necesario para trabajar.
       ws = wb.active # Crea libro de trabajo con una hoja de trabajo.
 
@@ -139,9 +133,6 @@ def index(request):
       #Filtro
       ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
       wb.save('export_excel/static/files/proyecto_vicky.xlsx')
-      #wb.save('static/files/proyecto_vicky.xlsx')
-
-      #wb.save('proyecto_vicky.xlsx')
       return redirect('index')
   return render(request, "index.html", {'form': form})
 

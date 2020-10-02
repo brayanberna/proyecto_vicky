@@ -136,7 +136,7 @@ def index(request):
       wb.save('C:\\Users\\56975\\Documents\\proyecto_vicky.xlsx')
       wb.save('C:\\Users\56975\Documents\proyecto_vicky.xlsx')
       wb.save(r'C:\Users\56975\Documents\proyecto_vicky.xlsx')
-      #wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
+      wb.save(r'C:/Users/56975/Documents/proyecto_vicky.xlsx')
 
       return redirect('index')
   return render(request, "index.html", {'form': form})

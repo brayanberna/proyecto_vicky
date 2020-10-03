@@ -1,7 +1,6 @@
 import sys
 sys.getfilesystemencoding()
-export LANG="en_US.UTF-8"
-
+from django.utils.translation import ugettext_lazy as _ 
 from django.shortcuts import render
 from django.shortcuts import redirect
 

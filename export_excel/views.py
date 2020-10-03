@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys
 sys.getfilesystemencoding()
 from django.utils.translation import ugettext_lazy as _ 

@@ -38,7 +38,7 @@ def index(request):
     rango_etario = form.cleaned_data.get('rango_etario')
     edad = form.cleaned_data.get('edad')
     guargar_excel = request.FILES['guardar_excel']
-    print("HOLAAAAAAAAAAAAAA::", guargar_excel)
+    #print("HOLAAAAAAAAAAAAAA::", guargar_excel)
 
     try:
       workbook_name = 'export_excel/static/files/proyecto_vicky.xlsx'

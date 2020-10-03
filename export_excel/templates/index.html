@@ -3,7 +3,7 @@
 {% block content %}
   <div class="col pb-5">
     <h2>Registro de atención.</h2>
-    <form action="" method="post" enctype="multipart/form-data" class="row pt-2 g-4">
+    <form action="" method="post" enctype="multipart/form-data" class="row pt-2 g-4" charset=UTF-8'>
       {% csrf_token %}
       <div class="col-sm-12 col-md-4 col-lg-4">
         {{ form.localidad.label_tag }}

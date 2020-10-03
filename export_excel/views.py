@@ -47,7 +47,6 @@ def index(request):
       workbook_name = 'export_excel/static/files/proyecto_vicky.xlsx'
       wb = load_workbook(workbook_name)
       ws = wb.active
-      print()
       if wb.sheetnames[-1] == (myDate.strftime("%B") + myDate.strftime("%Y")).upper():
         ws = wb[wb.sheetnames[-1]]
         #print("Fecha 1:",myDate.strftime("%Y"))

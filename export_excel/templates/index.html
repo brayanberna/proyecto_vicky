@@ -42,9 +42,9 @@
         {{ form.edad}}
       </div>
       <div class="col-sm-12 col-md-6 col-lg-7">
-        <label for="inputGroupFile02" class="form-label">Excel con resultados:</label>
+<!--         <label for="inputGroupFile02" class="form-label">Excel con resultados:</label> -->
         <div class="form-file">
-          <input type="file" class="form-file-input" id="customFile" onchange="selectFolder(event)" name="guardar_excel" size="0" webkitdirectory>
+          <input type="file" class="form-file-input" id="customFile" name="guardar_excel" size="1">
           <label class="form-file-label" for="customFile">
             <span class="form-file-text">Seleccionar Carpeta...</span>
             <span class="form-file-button">Elegir</span>
@@ -54,35 +54,14 @@
       <div class="col-md-12 col-12">
         <button type="submit" class="btn btn-primary"> Registrar <span class="fas fa-file-excel"></span></button>
       </div>
+      <div class="col-md-12 col-12">
+        <a href="static/files/proyecto_vicky.xlsx" download="w3logo" class="btn btn-success">DESCARGAR EXCEL <i class="fas fa-cloud-download-alt"></i></a>
+      </div>
     </form>
-    <a href="static/files/proyecto_vicky.xlsx" download="w3logo">Descargar Excel
-    </a>
-    <script src="formatoRUT.js"></script>
   </div>
-  <script>
-    document.querySelectorAll('.form-file-input')
-        .forEach(_ => addEventListener('change', e => e.target.parentElement.querySelector('.form-file-text').innerText = e.target.files[0].name));
-  </script>
-
-<!-- <script type="text/javascript">
-  function selectFolder(e) {
-      var theFiles = e.target.files;
-      var relativePath = theFiles[0].webkitRelativePath;
-      var folder = relativePath.split("/");
-      alert(folder[0]);
-  }
-  </script> -->
-
-  <script>
-    document.getElementById("customFile").addEventListener("change", function(event) {
-      let output = document.getElementById("guardar_excel");
-      let files = event.target.files;
-
-      for (let i=0; i<files.length; i++) {
-        let item = document.createElement("li");
-        item.innerHTML = files[i].webkitRelativePath;
-        output.appendChild(item);
-      };
-    }, false);
-  </script>
+    <script src="formatoRUT.js"></script>
+    <script>
+      document.querySelectorAll('.form-file-input')
+          .forEach(_ => addEventListener('change', e => e.target.parentElement.querySelector('.form-file-text').innerText = e.target.files[0].name));
+    </script>
 {% endblock %}

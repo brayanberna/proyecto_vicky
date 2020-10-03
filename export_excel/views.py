@@ -37,8 +37,8 @@ def index(request):
     sexo = form.cleaned_data.get('sexo')
     rango_etario = form.cleaned_data.get('rango_etario')
     edad = form.cleaned_data.get('edad')
-    #guargar_excel = request.FILES['guardar_excel']
-    #print("HOLAAAAAAAAAAAAAA::", guargar_excel)
+    guargar_excel = request.FILES['guardar_excel']
+    print("HOLAAAAAAAAAAAAAA::", guargar_excel)
 
     try:
       workbook_name = 'export_excel/static/files/proyecto_vicky.xlsx'
@@ -133,9 +133,9 @@ def index(request):
       #Filtro
       ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
       wb.save('export_excel/static/files/proyecto_vicky.xlsx')
-      wb.save('C:\\Users\\56975\\Documents\\proyecto_vicky.xlsx')
-      wb.save('C:\\Users\56975\Documents\proyecto_vicky.xlsx')
-      wb.save(r'C:\Users\56975\Documents\proyecto_vicky.xlsx')
+      #wb.save('C:\\Users\\56975\\Documents\\proyecto_vicky.xlsx')
+      #wb.save('C:\\Users\56975\Documents\proyecto_vicky.xlsx')
+      #wb.save(r'C:\Users\56975\Documents\proyecto_vicky.xlsx')
       #wb.save(r'C:/Users/56975/Documents/proyecto_vicky.xlsx')
 
       return redirect('index')

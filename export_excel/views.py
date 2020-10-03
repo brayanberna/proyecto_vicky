@@ -1,6 +1,7 @@
-#!/usr/local/bin/python
-# -*- coding: utf-8 -*-
-import os, sys
+import sys
+sys.getfilesystemencoding()
+export LANG="en_US.UTF-8"
+
 from django.shortcuts import render
 from django.shortcuts import redirect
 

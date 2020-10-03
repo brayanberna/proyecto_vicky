@@ -19,6 +19,8 @@ from datetime import datetime
 # Idioma "es-ES" (código para el español de España)
 #locale.setlocale(locale.LC_ALL, 'es-ES') 
 
+# -*- coding: utf-8 -*-
+
 # Create your views here.
 myDate=datetime.now()
 

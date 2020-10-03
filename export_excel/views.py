@@ -19,6 +19,7 @@ from datetime import datetime
 # Idioma "es-ES" (código para el español de España)
 #locale.setlocale(locale.LC_ALL, 'es-ES') 
 
+#!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 import os, sys
 

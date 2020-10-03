@@ -20,6 +20,7 @@ from datetime import datetime
 #locale.setlocale(locale.LC_ALL, 'es-ES') 
 
 # -*- coding: utf-8 -*-
+import os, sys
 
 # Create your views here.
 myDate=datetime.now()

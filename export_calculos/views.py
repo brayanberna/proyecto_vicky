@@ -31,8 +31,8 @@ def export(request):
     wb2 = load_workbook(workbook_name2)
     ws = wb[wb.sheetnames[-3]]
     ws2 = wb2[wb2.sheetnames[0]]
-    print("Hoja 1:",wb.sheetnames[-3])
-    print("Hoja 2:",wb2.sheetnames[0])
+    #print("Hoja 1:",wb.sheetnames[-3])
+    #print("Hoja 2:",wb2.sheetnames[0])
 
     for rows in ws['A1':get_column_letter(ws.max_column) + '1']:
       for cell in rows:

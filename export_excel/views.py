@@ -1,3 +1,6 @@
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+import os, sys
 from django.shortcuts import render
 from django.shortcuts import redirect
 
@@ -18,10 +21,6 @@ from datetime import datetime
 #import locale
 # Idioma "es-ES" (código para el español de España)
 #locale.setlocale(locale.LC_ALL, 'es-ES') 
-
-#!/usr/local/bin/python
-# -*- coding: utf-8 -*-
-import os, sys
 
 # Create your views here.
 myDate=datetime.now()

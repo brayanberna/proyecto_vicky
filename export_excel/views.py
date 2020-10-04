@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-import sys
-sys.getfilesystemencoding()
-from django.utils.translation import ugettext_lazy as _ 
 from django.shortcuts import render
 from django.shortcuts import redirect
 
@@ -27,7 +24,7 @@ from datetime import datetime
 myDate=datetime.now()
 
 def index(request):
-  form = RegisterFormIndex(request.POST or None)
+  form = RegisterFormIndex(request.POST or None, request.FILES)
   
   if request.method == 'POST' and form.is_valid():
     #formatedDate = myDate.strftime("%Y-%m-%d %H:%M:%S")
@@ -41,8 +38,11 @@ def index(request):
     sexo = form.cleaned_data.get('sexo')
     rango_etario = form.cleaned_data.get('rango_etario')
     edad = form.cleaned_data.get('edad')
+    archivo = form.cleaned_data.get('archivo')
     guargar_excel = request.FILES['guardar_excel']
-    print("HOLAAAAAAAAAAAAAA::", guargar_excel)
+    print("Nombre Archivo 1: ", guargar_excel)
+    print("Nombre Archivo 2: ", archivo)
+    print("PICOOOOOOOOO")
 
     try:
       workbook_name = 'export_excel/static/files/proyecto_vicky.xlsx'
@@ -133,13 +133,15 @@ def index(request):
         for cell in rows:
           cell.alignment = Alignment(horizontal="center")
 
+      print("PICOOOOOOOOO")
       #Filtro
       ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
-      wb.save('export_excel/static/files/proyecto_vicky.xlsx')
+      #wb.save('export_excel/static/files/proyecto_vicky.xlsx')
       #wb.save('C:\\Users\\56975\\Documents\\proyecto_vicky.xlsx')
       #wb.save('C:\\Users\56975\Documents\proyecto_vicky.xlsx')
       #wb.save(r'C:\Users\56975\Documents\proyecto_vicky.xlsx')
-      #wb.save(r'C:/Users/56975/Documents/proyecto_vicky.xlsx')
+      wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
+
 
       return redirect('index')
   return render(request, "index.html", {'form': form})

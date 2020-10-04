@@ -3,7 +3,7 @@
 {% block content %}
   <div class="col pb-5">
     <h2>Registro de atención.</h2>
-    <form action="" method="post" enctype="multipart/form-data" class="row pt-2 g-4" content='text/html; charset=UTF-8'>
+    <form action="" method="post" enctype="multipart/form-data" class="row pt-2 g-4">
       {% csrf_token %}
       <div class="col-sm-12 col-md-4 col-lg-4">
         {{ form.localidad.label_tag }}
@@ -42,14 +42,18 @@
         {{ form.edad}}
       </div>
       <div class="col-sm-12 col-md-6 col-lg-7">
-<!--         <label for="inputGroupFile02" class="form-label">Excel con resultados:</label> -->
+<!--    <label for="inputGroupFile02" class="form-label">Excel con resultados:</label> -->
         <div class="form-file">
-          <input type="file" class="form-file-input" id="customFile" name="guardar_excel" size="1">
+          <input type="file" class="form-file-input" id="customFile" name="guardar_excel">
           <label class="form-file-label" for="customFile">
             <span class="form-file-text">Seleccionar Carpeta...</span>
             <span class="form-file-button">Elegir</span>
           </label>
         </div>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-3">
+        {{ form.archivo.label_tag }}
+        {{ form.archivo}}
       </div>
       <div class="col-md-12 col-12">
         <button type="submit" class="btn btn-primary"> Registrar <span class="fas fa-file-excel"></span></button>
@@ -59,9 +63,8 @@
       </div>
     </form>
   </div>
-    <script src="formatoRUT.js"></script>
-    <script>
-      document.querySelectorAll('.form-file-input')
-          .forEach(_ => addEventListener('change', e => e.target.parentElement.querySelector('.form-file-text').innerText = e.target.files[0].name));
-    </script>
+  <script>
+    document.querySelectorAll('.form-file-input')
+        .forEach(_ => addEventListener('change', e => e.target.parentElement.querySelector('.form-file-text').innerText = e.target.files[0].name));
+  </script>
 {% endblock %}

@@ -9,17 +9,14 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
+import sys
+sys.getfilesystemencoding()
+from django.utils.translation import ugettext_lazy as _ 
 
 from pathlib import Path
-
 import os
 
-MEDIA_ROOT = os.path.join('D:', u' INVESTIGACIÓN_P')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent

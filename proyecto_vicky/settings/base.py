@@ -9,13 +9,14 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-# -*- coding: utf-8 -*-
-import sys
-sys.getfilesystemencoding()
-from django.utils.translation import ugettext_lazy as _ 
+
 
 from pathlib import Path
 import os
+
+import sys
+sys.getfilesystemencoding()
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

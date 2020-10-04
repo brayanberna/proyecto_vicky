@@ -16,7 +16,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from __future__ import unicode_literals
 
 from pathlib import Path
+
 import os
+
+MEDIA_ROOT = os.path.join('D:', u' INVESTIGACIÓN_P')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent

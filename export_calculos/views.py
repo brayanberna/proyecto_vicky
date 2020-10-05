@@ -176,6 +176,7 @@ def export(request):
     ws2['X34'] = dieciocho_veintitres_meses_m
     ws2['Y34'] = dieciocho_veintitres_meses_f
     print("hola")
-    wb2.save('C:/Users/56975/Documents/FORMATO CONTROL NIÑO SANO.xlsx')
+    #wb2.save('C:/Users/56975/Documents/FORMATO CONTROL NIÑO SANO.xlsx')
+    wb2.save('export_excel/static/files/resultado.xlsx')
     return redirect('export')
   return render(request, 'export.html')

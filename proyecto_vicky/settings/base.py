@@ -10,13 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-# /etc/mysql/my.cnf
-
-default-character-set = utf8
-
 from pathlib import Path
 import os
-
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -95,8 +90,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
 #LANGUAGE_CODE = 'en-es'
+LANGUAGE_CODE = 'es-CL'
 
 TIME_ZONE = 'UTC'
 

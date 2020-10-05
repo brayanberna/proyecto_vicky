@@ -20,10 +20,11 @@ from datetime import datetime
 # Idioma "es-ES" (código para el español de España)
 #locale.setlocale(locale.LC_ALL, 'es-ES') 
 
+
 # Create your views here.
 myDate=datetime.now()
 
-def index(request, encoding='utf-8'):
+def index(request):
   form = RegisterFormIndex(request.POST or None, request.FILES)
   
   if request.method == 'POST' and form.is_valid():
@@ -40,8 +41,8 @@ def index(request, encoding='utf-8'):
     edad = form.cleaned_data.get('edad')
     archivo = form.cleaned_data.get('archivo')
     guargar_excel = request.FILES['guardar_excel']
-    print("Nombre Archivo 1: ", guargar_excel.encode('ascii','ignore').decode())
-    print("Nombre Archivo 2: ", archivo.encode('ascii','ignore').decode())
+    print("Nombre Archivo 1: ", guargar_excel.encode('utf-8'))
+    print("Nombre Archivo 2: ", archivo.encode('utf-8'))
     print("PICOOOOOOOOO")
 
     try:

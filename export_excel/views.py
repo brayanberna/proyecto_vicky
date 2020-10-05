@@ -41,8 +41,8 @@ def index(request):
     edad = form.cleaned_data.get('edad')
     archivo = form.cleaned_data.get('archivo')
     guargar_excel = request.FILES['guardar_excel']
-    print("Nombre Archivo 1: ", guargar_excel.encode('utf-8'))
-    print("Nombre Archivo 2: ", archivo.encode('utf-8'))
+    print("Nombre Archivo 1: ", str(guargar_excel).encode('utf-8'))
+    print("Nombre Archivo 2: ", str(archivo).encode('utf-8'))
     print("PICOOOOOOOOO")
 
     try:

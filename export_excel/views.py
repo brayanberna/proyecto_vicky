@@ -1,5 +1,3 @@
-# encoding=utf8
-import sys
 from django.shortcuts import render
 from django.shortcuts import redirect
 
@@ -39,8 +37,8 @@ def index(request, encoding='utf-8'):
     sexo = form.cleaned_data.get('sexo')
     rango_etario = form.cleaned_data.get('rango_etario')
     edad = form.cleaned_data.get('edad')
-    archivo = form.cleaned_data.get('archivo')
-    guargar_excel = request.FILES['guardar_excel']
+    archivo = form.cleaned_data.get('archivo').decode('ascii', 'ignore')
+    guargar_excel = request.FILES['guardar_excel'].decode('ascii', 'ignore')
     print(u"Nombre Archivo 1: ", guargar_excel)
     print(u"Nombre Archivo 2: ", archivo)
     print("PICOOOOOOOOO")

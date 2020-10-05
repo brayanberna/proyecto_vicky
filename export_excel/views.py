@@ -13,6 +13,7 @@ from .forms import RegisterForm, RegisterFormIndex
 # Libreria Excel
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+
 # Libreria Fecha
 from datetime import datetime
 #import locale
@@ -37,10 +38,10 @@ def index(request, encoding='utf-8'):
     sexo = form.cleaned_data.get('sexo')
     rango_etario = form.cleaned_data.get('rango_etario')
     edad = form.cleaned_data.get('edad')
-    archivo = form.cleaned_data.get('archivo')
-    guargar_excel = request.FILES['guardar_excel']
-    print(u"Nombre Archivo 1: ", guargar_excel.encode('utf-8'))
-    print(u"Nombre Archivo 2: ", archivo.encode('utf-8'))
+    archivo = form.cleaned_data.get('archivo').encode('ascii','ignore').decode()
+    guargar_excel = request.FILES['guardar_excel'].encode('ascii','ignore').decode()
+    print("Nombre Archivo 1: ", guargar_excel).encode('ascii','ignore').decode()
+    print("Nombre Archivo 2: ", archivo).encode('ascii','ignore').decode()
     print("PICOOOOOOOOO")
 
     try:
@@ -132,7 +133,6 @@ def index(request, encoding='utf-8'):
         for cell in rows:
           cell.alignment = Alignment(horizontal="center")
 
-      print("PICOOOOOOOOO")
       #Filtro
       ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
       wb.save('export_excel/static/files/proyecto_vicky.xlsx')

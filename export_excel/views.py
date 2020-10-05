@@ -22,7 +22,7 @@ from datetime import datetime
 # Create your views here.
 myDate=datetime.now()
 
-def index(request):
+def index(request, encoding='utf-8'):
   form = RegisterFormIndex(request.POST or None, request.FILES)
   
   if request.method == 'POST' and form.is_valid():
@@ -37,8 +37,8 @@ def index(request):
     sexo = form.cleaned_data.get('sexo')
     rango_etario = form.cleaned_data.get('rango_etario')
     edad = form.cleaned_data.get('edad')
-    archivo = form.cleaned_data.get('archivo')
-    guargar_excel = request.FILES['guardar_excel']
+    archivo = form.cleaned_data.get('archivo').decode("utf-8")
+    guargar_excel = request.FILES['guardar_excel'].decode("utf-8")
     print(u"Nombre Archivo 1: ", guargar_excel)
     print(u"Nombre Archivo 2: ", archivo)
     print("PICOOOOOOOOO")

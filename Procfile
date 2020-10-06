@@ -1,1 +1,1 @@
-web: gunicorn proyecto_vicky.wsgi
+web: gunicorn proyecto_vicky.wsgi LANG=fr_FR

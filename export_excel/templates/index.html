@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
   <div class="col pb-5">
     <h2>Registro de atención.</h2>
@@ -40,20 +39,6 @@
       <div class="col-sm-12 col-md-4 col-lg-3">
         {{ form.edad.label_tag }}
         {{ form.edad}}
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-7">
-<!--    <label for="inputGroupFile02" class="form-label">Excel con resultados:</label> -->
-        <div class="form-file">
-          <input type="file" class="form-file-input" id="customFile" name="guardar_excel">
-          <label class="form-file-label" for="customFile">
-            <span class="form-file-text">Seleccionar Carpeta...</span>
-            <span class="form-file-button">Elegir</span>
-          </label>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-4 col-lg-3">
-        {{ form.archivo.label_tag }}
-        {{ form.archivo}}
       </div>
       <div class="col-md-12 col-12">
         <button type="submit" class="btn btn-primary"> Registrar <span class="fas fa-file-excel"></span></button>

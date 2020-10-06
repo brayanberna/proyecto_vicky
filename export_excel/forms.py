@@ -143,10 +143,9 @@ class RegisterFormIndex(forms.Form):
                         'name': 'edad',
                         'placeholder': '',
                       }))
-  archivo = forms.FileField(label='Archi',
-                      required=True,
+"""   archivo = forms.FileField(label='Archi',
                       widget=forms.FileInput(attrs={
                         'class': 'form-control',
                         'id': 'archivo',
                         'name': 'archivo',
-                      }))
+                      })) """

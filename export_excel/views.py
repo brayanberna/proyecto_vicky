@@ -16,10 +16,9 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 
 # Libreria Fecha
 from datetime import datetime
-#import locale
-# Idioma "es-ES" (código para el español de España)
-#locale.setlocale(locale.LC_ALL, 'es-ES') 
-
+import locale
+#Idioma "es-ES" (código para el español de España)
+locale.setlocale(locale.LC_ALL, 'es-ES') 
 
 # Create your views here.
 myDate=datetime.now()
@@ -39,11 +38,6 @@ def index(request):
     sexo = form.cleaned_data.get('sexo')
     rango_etario = form.cleaned_data.get('rango_etario')
     edad = form.cleaned_data.get('edad')
-    archivo = form.cleaned_data.get('archivo')
-    guargar_excel = request.FILES['guardar_excel']
-    print("Nombre Archivo 1: ", str(guargar_excel).encode('utf-8'))
-    print("Nombre Archivo 2: ", str(archivo).encode('utf-8'))
-    print("PICOOOOOOOOO")
 
     try:
       workbook_name = 'export_excel/static/files/proyecto_vicky.xlsx'
@@ -72,8 +66,7 @@ def index(request):
 
         ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
         wb.save('export_excel/static/files/proyecto_vicky.xlsx')
-        return redirect('index')
-        
+        return redirect('index')   
       else:
         #print("Fecha 1:",myDate.strftime("%Y"))
         #print("Fecha 2:",myDate.strftime("%B"))
@@ -137,12 +130,7 @@ def index(request):
       #Filtro
       ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
       wb.save('export_excel/static/files/proyecto_vicky.xlsx')
-      #wb.save('C:\\Users\\56975\\Documents\\proyecto_vicky.xlsx')
-      #wb.save('C:\\Users\56975\Documents\proyecto_vicky.xlsx')
-      #wb.save(r'C:\Users\56975\Documents\proyecto_vicky.xlsx')
       #wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
-
-
       return redirect('index')
   return render(request, "index.html", {'form': form})
 

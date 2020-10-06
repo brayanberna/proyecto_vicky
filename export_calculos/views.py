@@ -22,11 +22,9 @@ def export(request):
   cant_femenino = 0
   pauta_breve_hombres = 0
   pauta_breve_mujeres = 0
+
   # SECCIÓN A.1: APLICACIÓN Y RESULTADOS DE PAUTA BREVE
-  
   if request.method == 'POST':
-    #print(request.FILES['excel1'])
-    #print(request.FILES['excel2'])
     # Excel con datos
     workbook_name = request.FILES['excel1']
     workbook_name2 = request.FILES['excel2']
@@ -34,6 +32,8 @@ def export(request):
     wb2 = load_workbook(workbook_name2)
     ws = wb[wb.sheetnames[-3]]
     ws2 = wb2[wb2.sheetnames[0]]
+    #print("Nombre Archivo 1: ", str(workbook_name).encode('utf-8'))
+    #print("Nombre Archivo 2: ", str(workbook_name2).encode('utf-8'))
     #print("Hoja 1:",wb.sheetnames[-3])
     #print("Hoja 2:",wb2.sheetnames[0])
 
@@ -178,24 +178,12 @@ def export(request):
     ws2['W34'] = doce_diecisiete_meses_f
     ws2['X34'] = dieciocho_veintitres_meses_m
     ws2['Y34'] = dieciocho_veintitres_meses_f
-    print("hola")
-    #wb2.save('C:/Users/56975/Documents/FORMATO CONTROL NIÑO SANO.xlsx')
-    wb2.save('export_excel/static/files/resultado.xlsx')
 
-    #response = HttpResponse(content_type='application/vnd.ms-excel')
-    #response['Content-Disposition'] = 'attachment; filename="resultadoplop.xlsx"'
-    #response.write(wb2)
+    wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx')
 
-    #response.content_type = 'application/octet-stream;'
-    #response.set_header('Content-Disposition', 'attachment; filename=myexport.xlsx')
-    
-    #response = HttpResponse(content=save_virtual_workbook(wb2), mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-    #response['Content-Disposition'] = 'attachment; filename=myexport.xlsx'
-
+    #Código de descarga automática
     response = HttpResponse(content=save_virtual_workbook(wb2), content_type='application/ms-excel')
     response['Content-Disposition'] = 'attachment; filename=Inform.xlsx'
-
-    #response.body = save_virtual_workbook(wb2)
-    #return redirect('export')
     return response
+    #return redirect('export')
   return render(request, 'export.html')

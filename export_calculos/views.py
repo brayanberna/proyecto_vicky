@@ -11,6 +11,9 @@ from openpyxl.utils import get_column_letter
 # Libreria Fecha
 from datetime import datetime
 
+from openpyxl.writer.excel import save_virtual_workbook
+
+
 import numpy as np
 # Create your views here.
 def export(request):
@@ -186,7 +189,7 @@ def export(request):
     #response = HttpResponse(content_type='application/xls')
     response['Content-Disposition'] = 'attachment; filename="resultadoplop.xlsx"'
     #response.write(wb2)
-    response.write('export_excel/static/files/resultado.xlsx')
+    response.body = save_virtual_workbook(wb2)
     #return redirect('export')
     return response
   return render(request, 'export.html')

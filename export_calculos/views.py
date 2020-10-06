@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.http import HttpResponse
 
 # Libreria Excel
 from openpyxl import Workbook, load_workbook
@@ -178,5 +179,8 @@ def export(request):
     print("hola")
     #wb2.save('C:/Users/56975/Documents/FORMATO CONTROL NIÑO SANO.xlsx')
     wb2.save('export_excel/static/files/resultado.xlsx')
-    return redirect('export')
+    response = HttpResponse(content_type='text/xlsx')
+    response['Content-Disposition'] = 'attachment; filename="export_excel/static/files/resultado.xlsx"'
+    #return redirect('export')
+    return response
   return render(request, 'export.html')

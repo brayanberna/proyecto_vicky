@@ -13,7 +13,6 @@ from datetime import datetime
 
 from openpyxl.writer.excel import save_virtual_workbook
 
-
 import numpy as np
 # Create your views here.
 def export(request):
@@ -182,13 +181,13 @@ def export(request):
     print("hola")
     #wb2.save('C:/Users/56975/Documents/FORMATO CONTROL NIÑO SANO.xlsx')
     wb2.save('export_excel/static/files/resultado.xlsx')
-    #response = HttpResponse(content_type='text/xlsx')
-    response = HttpResponse(content_type='application/vnd.ms-excel')
+
     #response = HttpResponse(content_type='application/vnd.ms-excel')
-    #response = HttpResponse(content_type='application/vnd.xls')
-    #response = HttpResponse(content_type='application/xls')
-    response['Content-Disposition'] = 'attachment; filename="resultadoplop.xlsx"'
+    #response['Content-Disposition'] = 'attachment; filename="resultadoplop.xlsx"'
     #response.write(wb2)
+
+    response.content_type = 'application/octet-stream;'
+    response.set_header('Content-Disposition', 'attachment; filename=myexport.xlsx')
     response.body = save_virtual_workbook(wb2)
     #return redirect('export')
     return response

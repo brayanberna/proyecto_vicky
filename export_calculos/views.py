@@ -181,7 +181,8 @@ def export(request):
     wb2.save('export_excel/static/files/resultado.xlsx')
     #response = HttpResponse(content_type='text/xlsx')
     #response = HttpResponse(content_type='application/vnd.ms-excel')
-    response = HttpResponse(content_type='application/vnd.xls')
+    #response = HttpResponse(content_type='application/vnd.xls')
+    response = HttpResponse(content_type='application/xls')
     response['Content-Disposition'] = 'attachment; filename="export_excel/static/files/resultado.xlsx"'
     #return redirect('export')
     return response

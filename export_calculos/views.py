@@ -185,7 +185,8 @@ def export(request):
     #response = HttpResponse(content_type='application/vnd.xls')
     #response = HttpResponse(content_type='application/xls')
     response['Content-Disposition'] = 'attachment; filename="resultadoplop.xlsx"'
-    response.write(wb2)
+    #response.write(wb2)
+    response.write('export_excel/static/files/resultado.xlsx')
     #return redirect('export')
     return response
   return render(request, 'export.html')

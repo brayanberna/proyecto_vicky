@@ -1,0 +1,1 @@
+export LANG=${LANG:-es_ES}

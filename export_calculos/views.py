@@ -189,8 +189,12 @@ def export(request):
     #response.content_type = 'application/octet-stream;'
     #response.set_header('Content-Disposition', 'attachment; filename=myexport.xlsx')
     
-    response = HttpResponse(content=save_virtual_workbook(wb2), mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-    response['Content-Disposition'] = 'attachment; filename=myexport.xlsx'
+    #response = HttpResponse(content=save_virtual_workbook(wb2), mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    #response['Content-Disposition'] = 'attachment; filename=myexport.xlsx'
+
+    response = HttpResponse(content=save_virtual_workbook(wb2), content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename=Inform.xlsx'
+
     #response.body = save_virtual_workbook(wb2)
     #return redirect('export')
     return response

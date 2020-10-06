@@ -179,7 +179,8 @@ def export(request):
     print("hola")
     #wb2.save('C:/Users/56975/Documents/FORMATO CONTROL NIÑO SANO.xlsx')
     wb2.save('export_excel/static/files/resultado.xlsx')
-    response = HttpResponse(content_type='text/xlsx')
+    #response = HttpResponse(content_type='text/xlsx')
+    response = HttpResponse(content_type='application/vnd.ms-exce')l
     response['Content-Disposition'] = 'attachment; filename="export_excel/static/files/resultado.xlsx"'
     #return redirect('export')
     return response

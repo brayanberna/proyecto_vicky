@@ -1,4 +1,10 @@
-""" #!/usr/bin/env python
+"""
+heroku run "locale -a"
+-----------------------------------------------------------------------------------------
+heroku buildpacks:add heroku-community/locale
+------------------------------------------------------------------------------------------
+heroku buildpacks:add --index 1 https://github.com/heroku/heroku-buildpack-locale
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals

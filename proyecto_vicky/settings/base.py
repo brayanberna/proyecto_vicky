@@ -23,7 +23,6 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1#3s@@x39)rkds_#f6ieki#0#@)kmvnesk&_&+6_&%gx6dpqy9'
 
-
 # Application definition
 
 INSTALLED_APPS = [

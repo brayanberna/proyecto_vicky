@@ -180,7 +180,8 @@ def export(request):
     ws2['Y34'] = dieciocho_veintitres_meses_f
 
     #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.encode('utf-8'))
-    wb2.save(str(export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx).encode('utf-8'))
+    #wb2.save(str(export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx).encode('utf-8'))
+    wb2.save(str('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx').encode('utf-8'))
     #print("Nombre Archivo 1: ", str(workbook_name).encode('utf-8'))
 
     #Código de descarga automática

@@ -189,6 +189,7 @@ def export(request):
     #wb2.save(str('export_excel/static/files/FORMATO CONTROL NIÑO SANO').encode('utf-8') + '.xlsx')
     #wb2.save('%s.xlsx'%nombre)
     wb2.save('%s'%nombre)
+    wb2.save(nombre)
     #wb2.save(nombre + '.xlsx')
     #$('#imagePreview').html("<img src='"+e.target.result+"' width='"+180+"' height='"+170+"' class='"+'img-fluid'+"' />");
     #wb2.save(str('export_excel/static/files/FORMATO CONTROL NIÑO SANO').encode('utf-8').xlsx)

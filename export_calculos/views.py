@@ -182,6 +182,7 @@ def export(request):
 
     #wb2.save(unicode('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'))
     wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx')
+    #
     #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx').encode('utf-8')
     #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.encode('utf-8'))
     #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.encode('utf-8'))

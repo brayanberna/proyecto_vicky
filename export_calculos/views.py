@@ -179,7 +179,8 @@ def export(request):
     ws2['X34'] = dieciocho_veintitres_meses_m
     ws2['Y34'] = dieciocho_veintitres_meses_f
 
-    wb2.save('export_excel/static/files/FORMATO CONTROL NINO SANO.xlsx')
+    wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.encode('utf-8'))
+    #print("Nombre Archivo 1: ", str(workbook_name).encode('utf-8'))
 
     #Código de descarga automática
     response = HttpResponse(content=save_virtual_workbook(wb2), content_type='application/ms-excel')

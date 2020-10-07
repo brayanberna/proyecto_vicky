@@ -17,11 +17,11 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 # Libreria Fecha
 from datetime import datetime
 import locale
+locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
 #Idioma "es-ES" (código para el español de España)
 #locale.setlocale(locale.LC_ALL, 'es-ES.utf8') 
 #locale.setlocale(locale.LC_ALL, 'es-ES') 
 #locale.setlocale(locale.LC_ALL, '') 
-locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8') 
 
 # Create your views here.
 myDate=datetime.now()

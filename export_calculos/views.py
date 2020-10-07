@@ -198,8 +198,8 @@ def export(request):
     #wb2.save(str('export_excel/static/files/FORMATO CONTROL NIÑO SANO').encode('utf-8').xlsx)
     #print("Nombre Archivo 1: ", str(workbook_name).encode('utf-8'))
 
-    wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx').decode('utf-8)
-    #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.decode('utf-8))
+    wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx').decode('utf-8')
+    #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.decode('utf-8'))
     #nombre = "export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx".encode("ASCII", "UTF-8")
     #nombre = "export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx".decode('utf8')
     #nombre = export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx.decode('utf-8')

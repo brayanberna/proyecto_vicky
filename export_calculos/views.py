@@ -198,7 +198,7 @@ def export(request):
     #wb2.save(str('export_excel/static/files/FORMATO CONTROL NIÑO SANO').encode('utf-8').xlsx)
     #print("Nombre Archivo 1: ", str(workbook_name).encode('utf-8'))
 
-    nombre = "export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx".encode("ASCII", "UTF-8")
+    nombre = "export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx".decode('utf8')
     wb2.save('%s'%nombre)
     #Código de descarga automática
     response = HttpResponse(content=save_virtual_workbook(wb2), content_type='application/ms-excel')

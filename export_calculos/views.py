@@ -181,7 +181,7 @@ def export(request):
     ws2['Y34'] = dieciocho_veintitres_meses_f
 
     #wb2.save(unicode('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'))
-    #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx')
+    wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx')
     #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx').encode('utf-8')
     #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.encode('utf-8'))
     #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.encode('utf-8'))
@@ -199,7 +199,7 @@ def export(request):
     #print("Nombre Archivo 1: ", str(workbook_name).encode('utf-8'))
 
     #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx').decode('utf-8')
-    wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.decode('utf-8'))
+    #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.decode('utf-8'))
     #nombre = "export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx".encode("ASCII", "UTF-8")
     #nombre = "export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx".decode('utf8')
     #nombre = export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx.decode('utf-8')

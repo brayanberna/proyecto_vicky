@@ -179,12 +179,14 @@ def export(request):
     ws2['X34'] = dieciocho_veintitres_meses_m
     ws2['Y34'] = dieciocho_veintitres_meses_f
 
-    #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.encode('utf-8'))
+    #wb2.save('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx').encode('utf-8')
+    #wb2.save(str('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.encode('utf-8') + '.xlsx'))
+    wb2.save(str('export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx'.encode('utf-8')))
     #wb2.save(str(export_excel/static/files/FORMATO CONTROL NIÑO SANO.xlsx).encode('utf-8'))
-    nombre = "export_excel/static/files/FORMATO CONTROL NIÑO SANO".encode('utf-8')
+    #nombre = "export_excel/static/files/FORMATO CONTROL NIÑO SANO".encode('utf-8')
     #wb2.save(str('export_excel/static/files/FORMATO CONTROL NIÑO SANO').encode('utf-8') + '.xlsx')
     #wb2.save(' + "fdfdf" +'.xlsx')
-    wb2.save(''+nombre+'.xlsx')
+    #wb2.save(nombre + '.xlsx')
     #$('#imagePreview').html("<img src='"+e.target.result+"' width='"+180+"' height='"+170+"' class='"+'img-fluid'+"' />");
     #wb2.save(str('export_excel/static/files/FORMATO CONTROL NIÑO SANO').encode('utf-8').xlsx)
     #print("Nombre Archivo 1: ", str(workbook_name).encode('utf-8'))

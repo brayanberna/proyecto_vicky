@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-  <h2 class="pb-3">Registro de atención</h2>
+<h2 class="pb-3">Registro de atención</h2>
 <form action="" method="post" enctype="multipart/form-data" class="row pt-2 g-4">
   {% csrf_token %}
   <div class="col-sm-12 col-md-6 col-lg-6">
@@ -28,9 +27,11 @@
   <div class="col-12">
     <button type="submit" class="btn btn-primary">CARGAR RESULTADOS <i class="fas fa-download"></i></button>
   </div>
-  <div class="col-md-12 col-12">
-    <a href="static/files/FORMATO CONTROL NIÑO SANO.xlsx" download="w3logo" class="btn btn-success">DESCARGAR EXCEL <i class="fas fa-cloud-download-alt"></i></a>
-  </div>
+  {% if response.status_code == 200 %}
+    <div class="col-md-12 col-12">
+      <a href="static/files/FORMATO CONTROL NIÑO SANO.xlsx" download="w3logo" class="btn btn-success">DESCARGAR EXCEL <i class="fas fa-cloud-download-alt"></i></a>
+    </div>
+  {% endif %}
 </form>
 <script>
   document.querySelectorAll('.form-file-input')

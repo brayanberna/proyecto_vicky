@@ -13,7 +13,7 @@ from .forms import RegisterForm, RegisterFormIndex
 # Libreria Excel
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-
+import os, sys
 # Libreria Fecha
 from datetime import datetime
 import locale
@@ -24,6 +24,13 @@ myDate=datetime.now()
 
 def index(request):
   form = RegisterFormIndex(request.POST or None, request.FILES)
+  
+  if os.path.exists('export_excel/static/files/HOJA REGISTRO ATENCION DIARIA AÑO 2020 HUARA INFANTIL.xlsx'):
+    existe_excel = True
+  else:
+    existe_excel = False
+
+  print("Existes?:",existe_excel)
   
   if request.method == 'POST' and form.is_valid():
     #formatedDate = myDate.strftime("%Y-%m-%d %H:%M:%S")
@@ -39,7 +46,7 @@ def index(request):
     edad = form.cleaned_data.get('edad')
 
     try:
-      workbook_name = 'export_excel/static/files/proyecto_vicky.xlsx'
+      workbook_name = 'export_excel/static/files/HOJA REGISTRO ATENCION DIARIA AÑO 2020 HUARA INFANTIL.xlsx'
       wb = load_workbook(workbook_name)
       ws = wb.active
       if wb.sheetnames[-1] == (myDate.strftime("%B") + myDate.strftime("%Y")).upper():
@@ -64,7 +71,7 @@ def index(request):
         max_column=ws.max_column
 
         ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
-        wb.save('export_excel/static/files/proyecto_vicky.xlsx')
+        wb.save('export_excel/static/files/HOJA REGISTRO ATENCION DIARIA AÑO 2020 HUARA INFANTIL.xlsx')
         return redirect('index')   
       else:
         #print("Fecha 1:",myDate.strftime("%Y"))
@@ -94,7 +101,7 @@ def index(request):
             cell.alignment = Alignment(horizontal="center")
             
         ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
-        wb.save('export_excel/static/files/proyecto_vicky.xlsx')
+        wb.save('export_excel/static/files/HOJA REGISTRO ATENCION DIARIA AÑO 2020 HUARA INFANTIL.xlsx')
         return redirect('index')
 
     except FileNotFoundError:
@@ -128,10 +135,10 @@ def index(request):
 
       #Filtro
       ws.auto_filter.ref='A1:' + max(ws.calculate_dimension()) + str(ws.max_row)
-      wb.save('export_excel/static/files/proyecto_vicky.xlsx')
+      wb.save('export_excel/static/files/HOJA REGISTRO ATENCION DIARIA AÑO 2020 HUARA INFANTIL.xlsx')
       #wb.save('C:/Users/56975/Documents/proyecto_vicky.xlsx')
       return redirect('index')
-  return render(request, "index.html", {'form': form})
+  return render(request, "index.html", {'form':form, 'existe_excel':existe_excel})
 
 def login_view(request):
   if request.user.is_authenticated:

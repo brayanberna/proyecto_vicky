@@ -1,4 +1,3 @@
-import os, sys
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
@@ -25,12 +24,12 @@ def export(request):
   pauta_breve_mujeres = 0
 
   #if 'static/files/FORMATO CONTROL NIÑO SANO.xlsx'.exists:
-  if os.path.exists('static/files/FORMATO CONTROL NIÑO SANO.xlsx'):
-    existe_excel = True
-  else:
-    existe_excel = False
+  #if os.path.exists('static/files/FORMATO CONTROL NIÑO SANO.xlsx'):
+  #  existe_excel = True
+  #else:
+  #  existe_excel = False
 
-  print("Existes?",existe_excel)
+  #print("Existes?",existe_excel)
 
   # SECCIÓN A.1: APLICACIÓN Y RESULTADOS DE PAUTA BREVE
   if request.method == 'POST':
@@ -192,12 +191,6 @@ def export(request):
 
     #Código de descarga automática
     response = HttpResponse(content=save_virtual_workbook(wb2), content_type='application/ms-excel')
-    #response = HttpResponse(content=save_virtual_workbook(wb2), content_type='application/ms-excel', status='405')
-    #response = HttpResponse(content=save_virtual_workbook(wb2), content_type='application/ms-excel', status=[code])
-    #response = HttpResponse(content=save_virtual_workbook(wb2), content_type='application/ms-excel', status=[200])
-    #response = HttpResponse(content=save_virtual_workbook(wb2), content_type='application/ms-excel', status=['200'])
     response['Content-Disposition'] = 'attachment; filename=Inform.xlsx'
-    print("KIEEEEEEEE:",response)
-    print("KIEEEEEEEE 2:",response.status_code)
     return response
-  return render(request, 'export.html', {'existe_excel':existe_excel})
+  return render(request, 'export.html')

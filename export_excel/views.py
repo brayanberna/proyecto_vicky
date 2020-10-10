@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
 
@@ -13,7 +14,8 @@ from .forms import RegisterForm, RegisterFormIndex
 # Libreria Excel
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-import os, sys
+
+import os
 # Libreria Fecha
 from datetime import datetime
 import locale
@@ -22,16 +24,15 @@ locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
 # Create your views here.
 myDate=datetime.now()
 
+@login_required(login_url='login')
 def index(request):
   form = RegisterFormIndex(request.POST or None, request.FILES)
-  
+
   if os.path.exists('export_excel/static/files/HOJA REGISTRO ATENCION DIARIA AÑO 2020 HUARA INFANTIL.xlsx'):
     existe_excel = True
   else:
     existe_excel = False
 
-  print("Existes?:",existe_excel)
-  
   if request.method == 'POST' and form.is_valid():
     #formatedDate = myDate.strftime("%Y-%m-%d %H:%M:%S")
     localidad = form.cleaned_data.get('localidad')
@@ -115,6 +116,7 @@ def index(request):
       datos = ['1', localidad, fecha, nombre, rut, tipo_atencion, nacionalidad, etnia, sexo, rango_etario, edad]
       ws.append(datos)
 
+      #Estilos a la cabecera
       for rows in ws['A1':'K1']:
         for cell in rows:
           cell.font = Font(color="000000", size=16, bold=True)  #Color de texto

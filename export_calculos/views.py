@@ -14,7 +14,10 @@ from datetime import datetime
 from openpyxl.writer.excel import save_virtual_workbook
 
 import numpy as np
-# Create your views here.
+
+from django.contrib.auth.decorators import login_required
+
+@login_required(login_url='login')
 def export(request):
   myDate=datetime.now()
   fecha = myDate.strftime("%d-%m-%Y")

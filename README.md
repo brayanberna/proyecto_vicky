@@ -1,7 +1,7 @@
 # Registro de atención diaria
 Proyecto de práctica desarrollado en Django donde se exportan e importan datos de archivos Excel a través de la librería OpenPyXL
 ## Live Preview:
-- https://proyectovicky.herokuapp.com/
+- **https://proyectovicky.herokuapp.com/**
 ## Herramientas usadas en el proyecto:
 - **[Boostrap 5](https://v5.getbootstrap.com/)**  Framework web.
 - **[OpenPyXL](https://openpyxl.readthedocs.io/en/stable/)**  Libreria para leer/escribir archivos xlsx de Excel.

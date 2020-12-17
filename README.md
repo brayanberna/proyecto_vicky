@@ -3,6 +3,7 @@ Proyecto de práctica desarrollado en Django donde se exportan e importan datos 
 ## Live Preview:
 - **https://proyectovicky.herokuapp.com/**
 ## Herramientas usadas en el proyecto:
+- **[Python 3.7](https://www.python.org/)**  Lenguaje de programación.
 - **[Boostrap 5](https://v5.getbootstrap.com/)**  Framework web.
 - **[OpenPyXL](https://openpyxl.readthedocs.io/en/stable/)**  Libreria para leer/escribir archivos xlsx de Excel.
 - **[Django](https://www.djangoproject.com/)**  Framework de desarrollo web de código abierto, escrito en Python.
